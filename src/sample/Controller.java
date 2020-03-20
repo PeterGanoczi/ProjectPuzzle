@@ -23,9 +23,34 @@ public class Controller {
     public Button btn13;
     public Button btn14;
     public Button btn15;
+    private Game game;
 
-
+    public Controller(){
+        game=new Game();
+    }
 
     public void clickBtn(ActionEvent event) {
+
+    }
+
+    public void reset(ActionEvent actionEvent) {
+        game.resetGame();
+        btnReset.setDisable(true);
+        btnStart.setDisable(false);
+        btnEnd.setDisable(false);
+    }
+
+    public void start(ActionEvent actionEvent) {
+        game.startGame();
+        btnStart.setDisable(true);
+        btnReset.setDisable(false);
+        btnEnd.setDisable(false);
+    }
+
+    public void end(ActionEvent actionEvent) {
+        game.endGame();
+        btnStart.setDisable(false);
+        btnReset.setDisable(false);
+        btnEnd.setDisable(true);
     }
 }
